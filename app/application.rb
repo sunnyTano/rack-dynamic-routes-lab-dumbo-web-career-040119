@@ -2,7 +2,7 @@
 
 class Application 
 
-  @@items = []
+  # @@items = []
 
   def call(env)
     resp = Rack::Response.new
@@ -17,7 +17,7 @@ class Application
           # binding.pry
           if item_match
             @@items.each do |i|
-              i.name == item_match
+            i.name == item_match
             resp.write i.price
             end
           else
@@ -27,8 +27,8 @@ class Application
       else
     resp.write "Route not found"
     resp.status = 404
-      end
-      resp.finish
+    end
+    resp.finish
   end 
 end 
 
